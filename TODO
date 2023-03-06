@@ -1,7 +1,7 @@
 currently:
-- validate fuzzy search of village in catchment area master list and send to sasha
-- get long and lat for each village in master list using GoogleV3 geocoder after having experimented with Nanomantin geocoder
-- run k-means ++, fuzzy clustering and GMM algo (deal with NaN values)
+- get coordinates for each village
+- make a list of columns you have selected for the clustering of demographic and symptoms, and validate wth annie and domain expert
+- run k-means ++ or k-means for spatio-temporal, fuzzy clustering and GMM algo (deal with NaN values)
 
 add village column (based on cleaning current village column)
 ask annie:

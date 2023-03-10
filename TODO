@@ -1,7 +1,6 @@
 currently:
 - fuzzy search:
     - find best match for villages with 2 desc terms using the catchment area list
-    - filter from master list and catchment list only villages in rusizi and nyamasheke 
 - get coordinates for each village from dbf and shp files
     - consider cleaning the district, sector, cell village vlaues in the format we are having right now
     - https://developers.arcgis.com/python/guide/key-features#spatial-analysis

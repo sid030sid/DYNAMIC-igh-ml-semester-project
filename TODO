@@ -1,7 +1,12 @@
 currently:
-- get coordinates for each village
+- fuzzy search:
+    - find best match for villages with 2 desc terms using the catchment area list
+    - filter from master list and catchment list only villages in rusizi and nyamasheke 
+- get coordinates for each village from dbf and shp files
+    - consider cleaning the district, sector, cell village vlaues in the format we are having right now
     - https://developers.arcgis.com/python/guide/key-features#spatial-analysis
-    
+
+- once data cleaning and prepariton is confirmed to be correct and valid. clean the notebook: rw-explorative-analysis
 - make a list of columns you have selected for the clustering of demographic and symptoms, and validate wth annie and domain expert
 - run k-means ++ or k-means for spatio-temporal, fuzzy clustering and GMM algo (deal with NaN values)
 

@@ -1,10 +1,6 @@
 currently:
-- fuzzy search:
-    - find best match for villages with 2 desc terms using the catchment area list
-- get coordinates for each village from dbf and shp files
-    - consider cleaning the district, sector, cell village vlaues in the format we are having right now
-    - https://developers.arcgis.com/python/guide/key-features#spatial-analysis
-
+- analyse the results of the village cleaning and give feedback to sasha if you are fine with this
+- how to visualise villages on map best (use shape coordinates or do i need to engineer a coordinate pair) --> try visualising the shapes
 - once data cleaning and prepariton is confirmed to be correct and valid. clean the notebook: rw-explorative-analysis
 - make a list of columns you have selected for the clustering of demographic and symptoms, and validate wth annie and domain expert
 - run k-means ++ or k-means for spatio-temporal, fuzzy clustering and GMM algo (deal with NaN values)

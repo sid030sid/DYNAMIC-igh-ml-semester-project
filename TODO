@@ -1,5 +1,4 @@
 currently:
-- make adjustable routine for throwing out bad fuzzy search results
 - how to visualise villages on map best (use shape coordinates or do i need to engineer a coordinate pair) --> try visualising the shapes
     - use interactive heat map for spatial-temporal analysis (which requires centre of shape of each village)
         fig = px.density_mapbox(results3, lat='LAT', lon='LON', z='CO2',hover_name = 'LocationName',
@@ -7,16 +6,23 @@ currently:
                                 center=dict(lat=47.38, lon=8.5), zoom=9, animation_frame='Date',
                                 mapbox_style="stamen-terrain")
         fig.show()
-- once data cleaning and prepariton is confirmed to be correct and valid. clean the notebook: rw-explorative-analysis
+- once data cleaning and preparation is confirmed to be correct and valid. clean the notebook: rw-explorative-analysis
+    - move analysis of low variance and missingness in seperate notebook (the baseline clustering notebook?)
 - make a list of columns you have selected for the clustering of demographic and symptoms, and validate wth annie and domain expert
-- run k-means ++ or k-means for spatio-temporal, fuzzy clustering and GMM algo (deal with NaN values)
-    - use from yellowbrick.cluster import KElbowVisualizer for nice application of elbow method
+- do base line spatio-temporal clustering:
+    - run k-means ++ or k-means for spatio-temporal
+        - use from yellowbrick.cluster import KElbowVisualizer for nice application of elbow method
+    - fuzzy clustering 
+    - GMM algo (deal with NaN values)
+- research reviews: systematic missingness clustering and clustering of representation (medarchive, padme, google scholar)
+- dealing with NAN (might not be necessary depends on the research about clustering in case of systematic missingness)
+    - check if bias: missing not at random (mnar) --> only for supervised tho --> check relationship to "labels" = diagnosis
+    - if missing at random, then impute with mean for continues or median for binary (or use MICE)
 
-add village column (based on cleaning current village column)
 ask annie:
 - report on missingness of symptoms columns --> due to nature of CDSS (= a decision tree) the data holds a lot of null values, thus instead of considering this during data cleaning (with e.g. data imputing) I would rather use clustering algo which can handle NaN values e.g. extensions of K-Means instead of trad K-mean 
-- what do i need to do for semester project registration on is academia
-symptoms missingness not yet determined
+- symptoms missingness not yet determined
+
 ask sasha:
 - some villages have a fifth description (besides village, cell, sector, district) -what to do with this?
 - how to get longitude and latitude for the villages in the master list
@@ -31,7 +37,8 @@ Get rid of unnecessary columns:
 - quality control of features: missingness and low variance needs to be determined --> helps for selection
 Descriptive analysis of data of important aspect (itself, per hf, per day, per hf and day):
 - space: hf and village 
-cluster in 
+
+cluster using 
 - k-means (as standard)
 - Gaussian Mixture models
 - co-clustering (suggested by former semester project by Paloma) as it includes spatio-temporal features in the algo

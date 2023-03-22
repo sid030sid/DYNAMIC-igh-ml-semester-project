@@ -1,6 +1,16 @@
 currently:
+- do base line spatio-temporal clustering:
+    - make kmeans algo modular (cell with config: clean NAN or drop NAN, include demographic or not, etc.)
+    - make rough analysis of spatial and temporal dimension using hf coordinates and px.density_mapbox with date slider
+
+    - run k-means ++ or k-means for spatio-temporal
+        - use from yellowbrick.cluster import KElbowVisualizer for nice application of elbow method
+    - fuzzy clustering 
+    - GMM algo (deal with NaN values)
+- research reviews: systematic missingness clustering and clustering of representation (medarchive, padme, google scholar)
+
 - how to visualise villages on map best (use shape coordinates or do i need to engineer a coordinate pair) --> try visualising the shapes
-    - use interactive heat map for spatial-temporal analysis (which requires centre of shape of each village)
+    - use interactive heat map for spatial-temporal analysis using "health_facility_longitude", "health_facility_latitude" as location(alternatively: use centre of shape of each village)
         fig = px.density_mapbox(results3, lat='LAT', lon='LON', z='CO2',hover_name = 'LocationName',
                                 hover_data = ['altitude', 'SensorUnit_ID','zone'], radius=10,
                                 center=dict(lat=47.38, lon=8.5), zoom=9, animation_frame='Date',
@@ -8,13 +18,7 @@ currently:
         fig.show()
 - once data cleaning and preparation is confirmed to be correct and valid. clean the notebook: rw-explorative-analysis
     - move analysis of low variance and missingness in seperate notebook (the baseline clustering notebook?)
-- make a list of columns you have selected for the clustering of demographic and symptoms, and validate wth annie and domain expert
-- do base line spatio-temporal clustering:
-    - run k-means ++ or k-means for spatio-temporal
-        - use from yellowbrick.cluster import KElbowVisualizer for nice application of elbow method
-    - fuzzy clustering 
-    - GMM algo (deal with NaN values)
-- research reviews: systematic missingness clustering and clustering of representation (medarchive, padme, google scholar)
+- make a list of columns you have selected for the clustering of demographic and symptoms, and validate with annie and domain expert
 - dealing with NAN (might not be necessary depends on the research about clustering in case of systematic missingness)
     - check if bias: missing not at random (mnar) --> only for supervised tho --> check relationship to "labels" = diagnosis
     - if missing at random, then impute with mean for continues or median for binary (or use MICE)

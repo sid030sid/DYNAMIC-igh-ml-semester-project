@@ -1,0 +1,17 @@
+TAKEAWAYS FOR MY DATA SCIENCE JOURNEY THROUGHOUT THROUGH OUT THIS PROJECT
+
+- handling missingness
+    - chose an abitrary number of nan threshold (e.g. 20% nan values) based on which features are dropped or not
+    - for supervised learning
+        - check if missing at random or not
+            - how?: check if nan values correlate with output or if there is any other systematic
+        - if missing at random:
+            - nan of continues features are replaced by mean
+            - nan of categorical features are replaced by median
+            - optional: make for each feature having replaced nan values an extra binary column tracking the imputation (e.g. 1=value in row of feature is imputed)
+        - if missing 
+    - for unsupervised learning
+        - compare the effect of using nan values, imputing them (like as if it is supervised and missing at random) and analysing the impact of imputation using extra binary column
+
+- handling low variance (especially important for clustering and classification tasks)
+    - chose an abitrary variance threshold (e.g. 20% nan values) based on which features are dropped or not

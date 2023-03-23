@@ -1,53 +1,36 @@
-currently:
+currently
 - do base line spatio-temporal clustering:
-    - make kmeans algo modular (cell with config: clean NAN or drop NAN, include demographic or not, etc.)
-    - make rough analysis of spatial and temporal dimension using hf coordinates and px.density_mapbox with date slider
+    - include demographic as feature
+    - throw out columns based on arbitrarily chosen nnan_threshold
+    - cluster three datasets different regarding how missingness is addressed
+        1. symptom and demographic data with NAN values --> use kmeans variation that handles NAN (kmeans++ or fuzzy clustering or GMM)
+        2. impute NAN as if missingness is at random: use mean for continues and median for binary
+        3. impute NAN as above. however, we also always add a binary column keeping track if value of respective feature is imputed or not --> analyse if imputation is picked up by clusters
 
-    - run k-means ++ or k-means for spatio-temporal
-        - use from yellowbrick.cluster import KElbowVisualizer for nice application of elbow method
-    - fuzzy clustering 
-    - GMM algo (deal with NaN values)
+    - make rough analysis of spatial and temporal dimension using hf coordinates and px.density_mapbox with date slider
+        - compute centroids of shape
 - research reviews: systematic missingness clustering and clustering of representation (medarchive, padme, google scholar)
 
 - how to visualise villages on map best (use shape coordinates or do i need to engineer a coordinate pair) --> try visualising the shapes
+    - use centroid for rw and shape for tz
     - use interactive heat map for spatial-temporal analysis using "health_facility_longitude", "health_facility_latitude" as location(alternatively: use centre of shape of each village)
         fig = px.density_mapbox(results3, lat='LAT', lon='LON', z='CO2',hover_name = 'LocationName',
                                 hover_data = ['altitude', 'SensorUnit_ID','zone'], radius=10,
                                 center=dict(lat=47.38, lon=8.5), zoom=9, animation_frame='Date',
                                 mapbox_style="stamen-terrain")
         fig.show()
-- once data cleaning and preparation is confirmed to be correct and valid. clean the notebook: rw-explorative-analysis
-    - move analysis of low variance and missingness in seperate notebook (the baseline clustering notebook?)
-- make a list of columns you have selected for the clustering of demographic and symptoms, and validate with annie and domain expert
+
 - dealing with NAN (might not be necessary depends on the research about clustering in case of systematic missingness)
     - check if bias: missing not at random (mnar) --> only for supervised tho --> check relationship to "labels" = diagnosis
     - if missing at random, then impute with mean for continues or median for binary (or use MICE)
-
-ask annie:
-- report on missingness of symptoms columns --> due to nature of CDSS (= a decision tree) the data holds a lot of null values, thus instead of considering this during data cleaning (with e.g. data imputing) I would rather use clustering algo which can handle NaN values e.g. extensions of K-Means instead of trad K-mean 
-- symptoms missingness not yet determined
-
 ask sasha:
-- some villages have a fifth description (besides village, cell, sector, district) -what to do with this?
-- how to get longitude and latitude for the villages in the master list
 - which columns are symptoms and which are diagnosis? (get understanding of the used abbreviations)
 - which symptoms should i focus on aka which should i use for clustering or should i use all (assume: a is proxy of diagnosis)
 - which columns can i get rid of? (to keep: data for hf, patient, symptoms, diagnosis ... else?)
-
-
-
-Get rid of unnecessary columns: 
-- focus on symptoms (as experts want)
-- quality control of features: missingness and low variance needs to be determined --> helps for selection
-Descriptive analysis of data of important aspect (itself, per hf, per day, per hf and day):
-- space: hf and village 
-
 cluster using 
 - k-means (as standard)
 - Gaussian Mixture models
 - co-clustering (suggested by former semester project by Paloma) as it includes spatio-temporal features in the algo
 - Agglomerative clustering (according to Paloma too much computational cost)
-analysis time and space of each cluster (make sure not to just cluster the diagnosis)
-basic inform yourself about geo spatial clustering + re read projects of other students
 carbon foot print analysis of project https://pypi.org/project/cumulator/
 check for clustering topics in #wishididthat chanel

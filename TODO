@@ -1,28 +1,24 @@
 currently
+- cluster features with nan values (two ways: kmoidos --> issue: scikit_learn_extra cannot be installed, kprototypes --> issue: requires declaration of categorical features)
 - do base line spatio-temporal clustering:
-    - include demographic as feature
-    - throw out columns based on arbitrarily chosen nnan_threshold
     - cluster three datasets different regarding how missingness is addressed
         1. symptom and demographic data with NAN values --> use kmeans variation that handles NAN (kmeans++ or fuzzy clustering or GMM)
-        2. impute NAN as if missingness is at random: use mean for continues and median for binary
         3. impute NAN as above. however, we also always add a binary column keeping track if value of respective feature is imputed or not --> analyse if imputation is picked up by clusters
-
+    - compute centroids of shape in data prep notebook
+        - find out format of given coordinates in shape file. they seem to be utm
+        - make code final data prep notebook --> make a fnial data set stored as pickleee
+        - make it possible so that and analysis notbook easily gets spatial dimension
     - make rough analysis of spatial and temporal dimension using hf coordinates and px.density_mapbox with date slider
-        - compute centroids of shape
 - research reviews: systematic missingness clustering and clustering of representation (medarchive, padme, google scholar)
 
-- how to visualise villages on map best (use shape coordinates or do i need to engineer a coordinate pair) --> try visualising the shapes
-    - use centroid for rw and shape for tz
+ask sascha: what amount of clusters would not make sense, this is the biggest k for the elbow method
+how to visualise villages on map best (use shape coordinates or do i need to engineer a coordinate pair) --> try visualising the shapes
     - use interactive heat map for spatial-temporal analysis using "health_facility_longitude", "health_facility_latitude" as location(alternatively: use centre of shape of each village)
         fig = px.density_mapbox(results3, lat='LAT', lon='LON', z='CO2',hover_name = 'LocationName',
                                 hover_data = ['altitude', 'SensorUnit_ID','zone'], radius=10,
                                 center=dict(lat=47.38, lon=8.5), zoom=9, animation_frame='Date',
                                 mapbox_style="stamen-terrain")
         fig.show()
-
-- dealing with NAN (might not be necessary depends on the research about clustering in case of systematic missingness)
-    - check if bias: missing not at random (mnar) --> only for supervised tho --> check relationship to "labels" = diagnosis
-    - if missing at random, then impute with mean for continues or median for binary (or use MICE)
 ask sasha:
 - which columns are symptoms and which are diagnosis? (get understanding of the used abbreviations)
 - which symptoms should i focus on aka which should i use for clustering or should i use all (assume: a is proxy of diagnosis)

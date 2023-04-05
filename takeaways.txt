@@ -7,7 +7,7 @@ TAKEAWAYS FOR MY DATA SCIENCE JOURNEY THROUGHOUT THROUGH OUT THIS PROJECT
             - how?: check if nan values correlate with output or if there is any other systematic
         - if missing at random:
             - nan of continues features are replaced by mean
-            - nan of categorical features are replaced by median
+            - nan of categorical features are replaced by median (or use MICE)
             - optional: make for each feature having replaced nan values an extra binary column tracking the imputation (e.g. 1=value in row of feature is imputed)
         - if missing 
     - for unsupervised learning

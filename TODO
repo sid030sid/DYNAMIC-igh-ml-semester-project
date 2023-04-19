@@ -1,5 +1,23 @@
 currently
+- check if clusters where made due to missingness
+    - Logistic regression: missingness effects cluster label? --> does nan values explain labels?
+- domain check up of clusters
+    - check top 10 diagnosis and others in clusters (same for syndroms)
+        - numericly check occurence of diagnosis in cluster
+    - check most prevelent cluster of the day and of the week
+    - convenient graph for domain experts
+- ask about new data 
+    - from zsofia she got a answer.csv from 18.03. and i am using one of 13.02. --> only using intervention conultations still valid?
+    - from tanzania
+
+
+    
 - cluster features with nan values (two ways: kmoidos --> issue: scikit_learn_extra cannot be installed, kprototypes --> issue: requires declaration of categorical features)
+    - use different distance method: Gower distance or the Mahalanobis distance
+- ask about following todos which depend on direction of research
+    - implement kmeans with multiple imputation and k-nearest neighbor imputation since they are mentioned as methods for dealing with structural missingness 
+    - add analysis of missing data patterns in explorative data analysis
+
 - do base line spatio-temporal clustering:
     - cluster three datasets different regarding how missingness is addressed
         1. symptom and demographic data with NAN values --> use kmeans variation that handles NAN (kmeans++ or fuzzy clustering or GMM)

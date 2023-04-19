@@ -1,0 +1,22 @@
+What is structural missingness?
+- missingness is related to other variables in the dataset. 
+For instance, because the data comes from a medical questionaire aka cdss 
+where saying yes or no to questions leads to missing out on several follow up questions whose values are all stored as NAN
+
+How to deal with structural missingness in general?
+1. Multiple Imputation (MI): 
+Multiple imputation is a method for dealing with missing data 
+that involves creating multiple plausible imputations for each missing value, 
+and then combining the results using specific rules. The imputations are based on 
+a statistical model that takes into account the observed data, 
+the variables with missing values, and possibly other variables that may affect the missingness. 
+The imputed values are drawn from a distribution that reflects the uncertainty about the missing data. 
+The MI process can be repeated multiple times to generate multiple imputed datasets, 
+and then standard statistical methods can be used to analyze each dataset separately 
+and combine the results using specific rules.
+
+2. Pattern-Mixture Models (PMM): Pattern-mixture models are a class of models that explicitly incorporate the missing data mechanism into the analysis, by modeling the joint distribution of the observed data and the missing data patterns. PMMs assume that the data follow a certain pattern of missingness, and then estimate the parameters of the model using maximum likelihood or Bayesian methods. The models can be used to estimate the missing values, as well as the parameters of interest, and can provide insights into the underlying structure of the data and the reasons for the missingness.
+
+3. Selection Models (SM): Selection models are another class of models that explicitly incorporate the missing data mechanism into the analysis, by modeling the probability of observing the data conditional on the missing data patterns. SMs assume that the data follow a certain pattern of missingness, and then estimate the parameters of the model using maximum likelihood or Bayesian methods. The models can be used to estimate the missing values, as well as the parameters of interest, and can provide insights into the underlying structure of the data and the reasons for the missingness. SMs are particularly useful when the missingness is related to the outcome variable or the variables of interest, as they can provide unbiased estimates of the parameters even when the missing data pattern is not completely at random or missing at random.
+
+How to deal with structural missingness for clustering?

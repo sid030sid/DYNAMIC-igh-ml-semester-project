@@ -1,17 +1,24 @@
 currently
-- check if clusters where made due to missingness
-    - Logistic regression: missingness effects cluster label? --> does nan values explain labels?
+- patent id should not be used as feature
+- do binary logistic regression for each cluster per each clustering approach --> do nan values of features explain cluster labels?
+- proper analysis of clusters: demographic, spatial, temporal
+    - generic code for summary, distribution of each feature in cluster
+    - also give metric for nan values being used for each feature per cluster
+- percentage of consultations per cluster  = threshold = h0
+- for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
+    - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)
+ 
 - domain check up of clusters
     - check top 10 diagnosis and others in clusters (same for syndroms)
         - numericly check occurence of diagnosis in cluster
     - check most prevelent cluster of the day and of the week
     - convenient graph for domain experts
+
+
+
 - ask about new data 
     - from zsofia she got a answer.csv from 18.03. and i am using one of 13.02. --> only using intervention conultations still valid?
-    - from tanzania
-
-
-    
+    - from tanzania    
 - cluster features with nan values (two ways: kmoidos --> issue: scikit_learn_extra cannot be installed, kprototypes --> issue: requires declaration of categorical features)
     - use different distance method: Gower distance or the Mahalanobis distance
 - ask about following todos which depend on direction of research

@@ -1,19 +1,21 @@
 currently
-- patent id should not be used as feature
 - do binary logistic regression for each cluster per each clustering approach --> do nan values of features explain cluster labels?
+    - check what following warning signifies: 
+        HessianInversionWarning: Inverting hessian failed, no bse or cov_params available warnings.warn('Inverting hessian failed, no bse or cov_params '
 - proper analysis of clusters: demographic, spatial, temporal
-    - generic code for summary, distribution of each feature in cluster
+    - generic code for summary, distribution of each feature in cluster --> done
     - also give metric for nan values being used for each feature per cluster
 - percentage of consultations per cluster  = threshold = h0
 - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
     - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)
  
+
+
 - domain check up of clusters
     - check top 10 diagnosis and others in clusters (same for syndroms)
         - numericly check occurence of diagnosis in cluster
     - check most prevelent cluster of the day and of the week
     - convenient graph for domain experts
-
 
 
 - ask about new data 
@@ -23,7 +25,6 @@ currently
     - use different distance method: Gower distance or the Mahalanobis distance
 - ask about following todos which depend on direction of research
     - implement kmeans with multiple imputation and k-nearest neighbor imputation since they are mentioned as methods for dealing with structural missingness 
-    - add analysis of missing data patterns in explorative data analysis
 
 - do base line spatio-temporal clustering:
     - cluster three datasets different regarding how missingness is addressed

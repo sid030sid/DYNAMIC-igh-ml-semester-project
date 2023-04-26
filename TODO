@@ -1,10 +1,10 @@
 currently
-- do binary logistic regression for each cluster per each clustering approach --> do nan values of features explain cluster labels?
-    - check what following warning signifies: 
-        HessianInversionWarning: Inverting hessian failed, no bse or cov_params available warnings.warn('Inverting hessian failed, no bse or cov_params '
+- report to annie and domain: 
+    - missingness of features correlate so that we have high multicollinearity so that logistic regression does not converge, thus no p-values to asses if effect of missingness in a feature impacts the decision to be cluster
+        - potential ways of handling multicollinearity: removing or combining variables (issue: all features are correlated to each other --> structural missingness)
+    - no movement of consultations between clusters depending on the clustering method --> all clustering methods come to the same clustering result
+     
 - proper analysis of clusters: demographic, spatial, temporal
-    - generic code for summary, distribution of each feature in cluster --> done
-    - also give metric for nan values being used for each feature per cluster
 - percentage of consultations per cluster  = threshold = h0
 - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
     - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)

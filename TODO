@@ -2,12 +2,13 @@ currently
 - report to annie and domain: 
     - missingness of features correlate so that we have high multicollinearity so that logistic regression does not converge, thus no p-values to asses if effect of missingness in a feature impacts the decision to be cluster
         - potential ways of handling multicollinearity: removing or combining variables (issue: all features are correlated to each other --> structural missingness)
-    - no movement of consultations between clusters depending on the clustering method --> all clustering methods come to the same clustering result
-     
+    - no movement of consultations between clusters depending on the clustering method --> all clustering methods come to the same clustering result 
 - proper analysis of clusters: demographic, spatial, temporal
-- percentage of consultations per cluster  = threshold = h0
 - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
     - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)
+    - flter for rows whch percentage_consultaton is significantly higher than the percentage_consultaton_thrshold --> one sided gaussian test
+        - H0: percentage_consultaton <= percentage_consultaton_thrshold 
+        - H1: percentage_consultaton > percentage_consultaton_thrshold
  
 
 

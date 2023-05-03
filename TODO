@@ -1,8 +1,6 @@
 currently
-- report to annie and domain: 
-    - missingness of features correlate so that we have high multicollinearity so that logistic regression does not converge, thus no p-values to asses if effect of missingness in a feature impacts the decision to be cluster
-        - potential ways of handling multicollinearity: removing or combining variables (issue: all features are correlated to each other --> structural missingness)
-    - no movement of consultations between clusters depending on the clustering method --> all clustering methods come to the same clustering result 
+- interpret univariat log regression in takeaways section
+- do presentation + continue a bit the code so that one can have visuals to show in the presentation
 - proper analysis of clusters: demographic, spatial, temporal
 - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
     - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)

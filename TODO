@@ -1,9 +1,17 @@
 currently 
+- prepare patient_age column concerning new insights
+- find consultations n madagascar--> why this error?
+- get diagnoses by making columns to one e. g. all mild croup diagnoses are actually one
 - visualice cluster pcs, tsne with diagnosis overlay https://docs.google.com/document/d/1v6Vw_XCM4By2oI48qXzSwcsU060eufPQpH9f9kKApZA/edit?usp=sharing)
+- outlier detection with scientific approach (variance, growth, mean) --> todo for next week: find data sciency approach and discuss with annie
+    - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
+        - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)
+        - flter for rows whch percentage_consultaton is significantly higher than the percentage_consultaton_thrshold (= mean of percentage_consultation per cluster) --> one sided gaussian test (one sample ttest)
+            - H0: percentage_consultaton <= percentage_consultaton_thrshold 
+            - H1: percentage_consultaton > percentage_consultaton_thrshold
 - interpret univariat log regression in takeaways section
     - look at models giving convergence warning: probably cases with just 1 or 0 --> zero deviation or close to zero deviation
     - is missingness explaining the labels?; if yes, it is bad cause these missing values have influence on the clustering. if not, it means that the nan preprocessing has similar effect on clustering as if the missing values were there (check this intuition with annie)
-- get diagnoses of interest and the 10 symptoms from sasha which need to be combined because there are for infants and older children
 
 - ask annie: What NAN pre-processing method should ultimately be used?
     - what is the protocol?
@@ -30,7 +38,7 @@ big goals
                 - H0: percentage_consultaton <= percentage_consultaton_thrshold 
                 - H1: percentage_consultaton > percentage_consultaton_thrshold
 3. tz
-4. optional: extra spatial feature: elevation, rural area or not, (aamir can be of help to get satelitte image. he works with poverty.)
+4. optional: extra spatial feature: elevation, rural area or not, (aamir can be of help to get satelitte image. he works with poverty)
 
  
 

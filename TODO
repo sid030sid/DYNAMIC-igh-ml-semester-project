@@ -1,6 +1,7 @@
 currently 
-- prepare patient_age column concerning new insights
-- how to handle vllages n madagasar?
+- prepare patient_age column concerning new insights (problem: "medical_case_birthdate" column does not exist in my dataset) wait for sasha response
+- how to handle vllages n madagasar? wait for sasha response
+ next:
 - get diagnoses by making columns to one e. g. all mild croup diagnoses are actually one
 - visualice cluster pcs, tsne with diagnosis overlay https://docs.google.com/document/d/1v6Vw_XCM4By2oI48qXzSwcsU060eufPQpH9f9kKApZA/edit?usp=sharing)
 - outlier detection with scientific approach (variance, growth, mean) --> todo for next week: find data sciency approach and discuss with annie

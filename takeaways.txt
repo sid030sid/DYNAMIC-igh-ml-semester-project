@@ -15,3 +15,7 @@ TAKEAWAYS FOR MY DATA SCIENCE JOURNEY THROUGHOUT THROUGH OUT THIS PROJECT
 
 - handling low variance (especially important for clustering and classification tasks)
     - chose an abitrary variance threshold (e.g. 20% nan values) based on which features are dropped or not
+
+- how to asses if a paper is good:
+    - if it is published in a journal with a short name it is good
+    - google "impact factor" +  journal name

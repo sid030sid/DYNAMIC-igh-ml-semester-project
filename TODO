@@ -1,9 +1,12 @@
 currently 
+- user tsne for clustering of raw data 
 - symptom distribution per cluster (stacked bar plot) --> see wireframe
-- prepare patient_age column concerning new insights (problem: "medical_case_birthdate" column does not exist in my dataset) wait for sasha response
-- how to handle vllages n madagasar? wait for sasha response
+- outlier detection: symptom and diagnoses distribution for outliers
+- prepare patient_age column concerning new insights (problem: "medical_case_birthdate" column does not exist in my dataset) wait for sasha response --> sasha response: use BD5 - Age in days for now
+- how to handle villages in madagascar? wait for sasha response --> response: should not be there. they are wrong computed
 - cross check code for graph: "movement of consultations"
- next:
+
+next:
 - visualice cluster pcs, tsne with diagnosis overlay https://docs.google.com/document/d/1v6Vw_XCM4By2oI48qXzSwcsU060eufPQpH9f9kKApZA/edit?usp=sharing)
 - outlier detection with scientific approach (variance, growth, mean) --> todo for next week: find data sciency approach and discuss with annie
     - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
@@ -23,9 +26,7 @@ currently
                 - is missingness explaining the labels?; if yes, it is bad cause these missing values have influence on the clustering. if not, it means that the nan preprocessing has similar effect on clustering as if the missing values were there (check this intuition with annie)
             - qualitive quality check: look at distribution of diagnoses in clusters. are we clustering more than just the diagnoses? if yes: good, if not: meaningless clustering --> reduce dimension of cluster result to 2d and lay over diagnosis (TSNE vs PCA vs UMAP)
 
-
 - proper analysis of clusters: demographic, diagnoses distribution
-
 
 
 
@@ -36,7 +37,8 @@ big goals
     - outlier detection with scientific approach (variance, growth, mean) --> todo for next week: find data sciency approach and discuss with annie
         - for each space time unit: test if percentage of consultations per cluster is different significantly (what if tme space has not enough data for test)
             - how to make time unit: day, week or probabilisitc (= ensuring certain amount of consultations is in time frame)
-            - flter for rows whch percentage_consultaton is significantly higher than the percentage_consultaton_thrshold (= mean of percentage_consultation per cluster) --> one sided gaussian test (one sample ttest)
+            - solution: treat each cluster's number or percentage of consultations per time-space point as random variable and compute confidence interval of mean --> if "new" number or percentage of consultations per time-space point is above upper bound of CI we have an outlier that is significant --> problem: the values of potential outliers are not new and are used to compute the CI! --> maybe good way to detect outliers in new data incoming from cdss
+            - alternative: flter for rows whch percentage_consultaton is significantly higher than the percentage_consultaton_thrshold (= mean of percentage_consultation per cluster) --> one sided gaussian test (one sample ttest)
                 - H0: percentage_consultaton <= percentage_consultaton_thrshold 
                 - H1: percentage_consultaton > percentage_consultaton_thrshold
 3. tz

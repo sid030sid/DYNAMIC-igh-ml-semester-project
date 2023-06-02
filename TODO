@@ -1,4 +1,8 @@
 currently 
+- add hf gps coordnats
+- deploy dash to herou
+- ma frst fnal vrson of dash
+
 - user tsne for clustering of raw data 
 - symptom distribution per cluster (stacked bar plot) --> see wireframe
 - outlier detection: symptom and diagnoses distribution for outliers

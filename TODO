@@ -1,7 +1,11 @@
 currently 
-- add hf gps coordnats
-- deploy dash to herou
-- ma frst fnal vrson of dash
+- deploy dash to heroku: https://dash.plotly.com/deployment
+- find out why spato-temporal data has more rows than data in tst.ipynb
+- add hf gps coordinates
+- make dash final:
+    - fill about page
+    - pretty layout
+    - make a fixed box for setting time, space and feature in spatio-temporal analysis
 
 - user tsne for clustering of raw data 
 - symptom distribution per cluster (stacked bar plot) --> see wireframe

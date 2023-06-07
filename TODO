@@ -1,11 +1,15 @@
 currently 
-- deploy dash to heroku: https://dash.plotly.com/deployment
+- chang algo to c-protoyp as deals wth mxed type data categorcal and contnues
+- research preprocess for means: wth bnary faturs an contnus and f a lot of NAN valus
+    - https://medium.com/@evgen.ryzhkov/5-stages-of-data-preprocessing-for-k-means-clustering-b755426f9932
+- resarch evaluatng means clustrng and how to select best preprocessng:
+    - mtrcs: https://scikit-learn.org/stable/modules/clustering.html#silhouette-coefficient
+    - consrng bacground and our objctve = outlr tcton and fnng clustrs that were not found by cdss: 
+        - feature mportance
+- research outler detecton
 - find out why spato-temporal data has more rows than data in tst.ipynb
 - add hf gps coordinates
-- make dash final:
-    - fill about page
-    - pretty layout
-    - make a fixed box for setting time, space and feature in spatio-temporal analysis
+
 
 - user tsne for clustering of raw data 
 - symptom distribution per cluster (stacked bar plot) --> see wireframe
